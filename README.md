@@ -6,6 +6,11 @@ A startup called Sparkify wants to analyze the data they've been collecting on s
 
 They'd like a data engineer to create a Postgres database with tables designed to optimize queries on song play analysis, and bring you on the project. Your role is to create a database schema and ETL pipeline for this analysis. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
 
+## Data set
+Data set source can be downloaded from here: http://millionsongdataset.com/.
+
+In this project, i only use a subset of data from http://millionsongdataset.com/, you can find it in `./data` folder.
+
 ## How To Run
 
 **Pre-requirements**
@@ -26,6 +31,10 @@ They'd like a data engineer to create a Postgres database with tables designed t
 
 > python3 etl.py
 
+## Outputs
+![Artist Table](/screenshot/val_artists.png "Artist Table")
+![Songs Table](/screenshot/val_songs.png "Songs Table")
+
 ## Fact Table
 
 ### **songplays** - records in log data associated with song plays i.e. records with page NextSong
@@ -41,6 +50,8 @@ They'd like a data engineer to create a Postgres database with tables designed t
 | session_id  | INT       |             |          |
 | location    | TEXT      |             |          |
 | user_agent  | TEXT      |             |          |
+![Table](/screenshot/tab_songplays.png "Songplays Table")
+
 
 ## Dimension Tables
 
@@ -53,6 +64,7 @@ They'd like a data engineer to create a Postgres database with tables designed t
 | last_name  | TEXT |             |          |
 | gender     | TEXT |             |          |
 | level      | TEXT |             |          |
+![Table](/screenshot/tab_users.png "Users Table")
 
 ### **songs** - songs in music database
 
@@ -63,6 +75,7 @@ They'd like a data engineer to create a Postgres database with tables designed t
 | artist_id | TEXT     |             | O        |
 | year      | INT      |             |          |
 | duration  | FLOAT(8) |             | O        |
+![Table](/screenshot/tab_songs.png "Songs Table")
 
 ### **artists** - artists in music database
 
@@ -73,6 +86,7 @@ They'd like a data engineer to create a Postgres database with tables designed t
 | location  | TEXT             |             |          |
 | latitude  | DOUBLE PRECISION |             |          |
 | longitude | DOUBLE PRECISION |             |          |
+![Table](/screenshot/tab_artists.png "Artists Table")
 
 ### **time** - timestamps of records in songplays broken down into specific units
 
@@ -85,3 +99,4 @@ They'd like a data engineer to create a Postgres database with tables designed t
 | month      | SMALLINT  |             |          |
 | year       | SMALLINT  |             |          |
 | weekday    | SMALLINT  |             |          |
+![Table](/screenshot/tab_times.png "Times Table")
