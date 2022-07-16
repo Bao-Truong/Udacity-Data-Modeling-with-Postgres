@@ -90,6 +90,16 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
+    """
+    Main ETL pipeline, procecss all the json file inside ./data/log_data, ./data/song_data and
+    upload the data the according fact/dim table
+
+    Args:
+        cur (cursor): PostgresDB Connection Cursor
+        conn (DBconnection): PostgresDB Connection string
+        filepath (str): directory to the file data (./data)
+        func (func): which function to used based on the filepath
+    """
     # get all files matching extension from directory
     all_files = []
     for root, dirs, files in os.walk(filepath):
