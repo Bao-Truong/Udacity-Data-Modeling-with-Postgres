@@ -11,6 +11,12 @@ Data set source can be downloaded from here: http://millionsongdataset.com/.
 
 In this project, i only use a subset of data from http://millionsongdataset.com/, you can find it in `./data` folder.
 
+## ETL Pipeline
+- Read the json data file and import into python Dataframe.
+- Filter the required columns for the corresponding Tables.
+- Using Upsert supported by Postgres DB SQL languages to load data into tables(INSERT ON CONFLICT) (Learn more here: https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-upsert/)
+
+
 ## How To Run
 
 **Pre-requirements**
@@ -22,6 +28,9 @@ In this project, i only use a subset of data from http://millionsongdataset.com/
   - Database: `sparkifydb`
   - Username: `student`
   - Password: `student`
+
+**Simple Run**
+- You can try out the `etl.ipynb` Jupyter notebook before running the below code. (Process only 1 file `log_data`, and 1 file `song_data`)
 
 **Create Database Tables**
 
